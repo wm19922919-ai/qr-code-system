@@ -5,37 +5,51 @@ import styled from 'styled-components';
 import './App.css';
 
 const AppContainer = styled.div`
-  font-family: Arial, sans-serif;
-  padding: 20px;
+  font-family: 'Inter', sans-serif;
+  padding: 2rem;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
 `;
 
 const TabContainer = styled.div`
   display: flex;
-  margin-bottom: 20px;
+  margin-bottom: 2rem;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
 `;
 
 const TabButton = styled.button`
-  padding: 10px 20px;
-  background-color: ${props => props.$active ? '#4CAF50' : '#f1f1f1'};
-  color: ${props => props.$active ? 'white' : 'black'};
+  padding: 1rem 2.5rem;
+  background-color: ${props => props.$active ? '#3b82f6' : 'transparent'};
+  color: ${props => props.$active ? 'white' : '#64748b'};
   border: none;
   cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
 
   &:hover {
-    background-color: ${props => props.$active ? '#45a049' : '#ddd'};
+    background-color: ${props => props.$active ? '#2563eb' : '#f1f5f9'};
+    color: ${props => props.$active ? 'white' : '#334155'};
   }
 
   &:first-child {
-    border-top-left-radius: 4px;
-    border-bottom-left-radius: 4px;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
   }
 
   &:last-child {
-    border-top-right-radius: 4px;
-    border-bottom-right-radius: 4px;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
   }
+
+  ${props => props.$active && `
+    box-shadow: 0 2px 4px rgba(59, 130, 246, 0.4);
+  `}
 `;
 
 function App() {
